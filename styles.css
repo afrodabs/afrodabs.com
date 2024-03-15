@@ -1,0 +1,88 @@
+.icon-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%; /* Adjust to fit your layout */
+  height: 100%; /* Adjust to fit your layout */
+  max-width: 380px; /* Adjust as needed */
+  max-height: 250px; /* Adjust as needed */
+  margin: 0 auto; /* Center the section horizontally */
+  color: white;
+  perspective: 1000px;
+  transform-origin: center;
+}
+
+.icon-cards__content {
+  position: relative; /* Change to relative */
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: translateZ(-30vw) rotateY(0);
+  animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.icon-cards__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Change to 100% */
+  height: 100%; /* Change to 100% */
+  max-width: 380px; /* Adjust as needed */
+  max-height: 250px; /* Adjust as needed */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  transform-origin: center;
+}
+
+.icon-cards__item:nth-child(1) {
+  background: #fdd94f;
+  transform: rotateY(0) translateZ(35vw);
+}
+
+.icon-cards__item:nth-child(2) {
+  background: #f87949;
+  transform: rotateY(120deg) translateZ(35vw);
+}
+
+.icon-cards__item:nth-child(3) {
+  background: #fbab48;
+  transform: rotateY(240deg) translateZ(35vw);
+}
+
+.icon-cards__content:hover {
+  animation-play-state: paused; /* Stop the carousel animation on hover */
+}
+
+.icon-cards__item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.icon-cards__item:hover img {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
+@keyframes carousel {
+  0%, 17.5% {
+    transform: translateZ(-35vw) rotateY(0);
+  }
+  27.5%, 45% {
+    transform: translateZ(-35vw) rotateY(-120deg);
+  }
+  55%, 72.5% {
+    transform: translateZ(-35vw) rotateY(-240deg);
+  }
+  82.5%, 100% {
+    transform: translateZ(-35vw) rotateY(-360deg);
+  }
+}/*# sourceMappingURL=styles.css.map */
